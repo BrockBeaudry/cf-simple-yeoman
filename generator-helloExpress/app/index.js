@@ -3,7 +3,6 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-var chalk = require('chalk');
 
 
 var HelloexpressGenerator = yeoman.generators.Base.extend({
@@ -20,13 +19,12 @@ var HelloexpressGenerator = yeoman.generators.Base.extend({
   askFor: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous Helloexpress generator!'));
+    this.log(yosay('Generating a barebones express server...'));
 
     var prompts = [{
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
+      name: 'isAwesome',
+      message: 'Is this generator awesome?',
       default: true
     }];
 
