@@ -35,18 +35,18 @@ var HelloexpressGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
-
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
+  fileScaffolding: function() {
+    this.mkdir('static');
   },
 
+  expressFiles: function() {
+    this.copy('_server.js', 'server.js');
+    this.copy('_index.html', 'static/index.html');
+  }, 
+
   projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
-  }
+    this.copy('_package.json', 'package.json');
+  },
 });
 
 module.exports = HelloexpressGenerator;
